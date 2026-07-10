@@ -19,6 +19,27 @@ LOCAL_WORKDIR = os.path.dirname(os.path.abspath(__file__))
 # Format: "nom_du_champ": "valeur_a_ecrire" (en string, format decimal, pas scientifique)
 
 PRESETS = {
+    "0": {
+        "label": "Reset - Valeurs de depart (partie normale)",
+        "values": {
+            "funds": "6.38",
+            "wire": "1545.35",
+            "trust": "2.0",
+            "yomi": "0.0",
+            "clipmakerLevel": "2.0",
+            "processors": "1.0",
+            "memory": "1.0",
+            "marketingLvl": "1.0",
+            "creativitySpeed": "1.0",
+            "creativity": "0.0",
+            "unusedClips": "0.0",
+            "harvesterLevel": "0.0",
+            "wireDroneLevel": "0.0",
+            "farmLevel": "0.0",
+            "batteryLevel": "0.0",
+            "storedPower": "0.0",
+        }
+    },
     "1": {
         "label": "Phase 1 - Bureau / Terrestre",
         "values": {
@@ -213,7 +234,7 @@ def main():
         print("\nPhases disponibles:")
         for k, v in PRESETS.items():
             print(f"  {k} - {v['label']}")
-        phase = input("\nChoisis une phase (1/2/3): ").strip()
+        phase = input("\nChoisis une phase (0/1/2/3): ").strip()
         if phase not in PRESETS:
             print("Choix invalide.")
             sys.exit(1)
